@@ -7,7 +7,9 @@ services:
       - "3000:3000"
     links:
       - mongo
+    restart: always
   mongo:
     image: mongo
     ports:
       - "27017:27017"
+    restart: always
