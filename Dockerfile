@@ -14,8 +14,5 @@ ADD . /opt/app
 EXPOSE 3001
 EXPOSE 3000
 
-#RUN cd server && npm run startServer &
-#RUN cd ..
-#CMD ["npm", "start"]
 CMD ["sudo", "chmod", "+x", "/opt/app/run.sh"]
 CMD ["/opt/app/run.sh"]

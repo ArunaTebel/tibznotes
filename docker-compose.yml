@@ -9,7 +9,5 @@ services:
       - mongo
   mongo:
     image: mongo
-#    volumes:
-#      - /var/lib/mongodb:/data/db
     ports:
       - "27017:27017"
