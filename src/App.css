@@ -1,0 +1,80 @@
+.App-header {
+    text-align: center;
+    background: cadetblue;
+    color: wheat;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.Notes-list {
+    float: left;
+    width: 20%;
+    padding: 5px;
+    margin-left: 10px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.Editor {
+    float: left;
+    width: 75%;
+}
+
+body {
+    background: #f3f1f2;
+    font-family: sans-serif;
+}
+
+.Editor {
+    margin: 1rem 1rem;
+}
+
+.Editor .ql-container {
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background: #fefcfc;
+}
+
+/* Snow Theme */
+.Editor .ql-snow.ql-toolbar {
+    display: block;
+    background: #eaecec;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+/* Bubble Theme */
+.Editor .ql-bubble .ql-editor {
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}
+
+.Editor .ql-editor {
+    min-height: 35em;
+    max-height: 35em;
+}
+
+.themeSwitcher {
+    margin-top: 0.5em;
+    font-size: small;
+}
+
+.note-list-item-wrapper {
+    display: inline-flex;
+}
+
+#editorSaveBtn {
+    margin-top: 10px;
+    float: right;
+}
+
+.navbar {
+    text-align: center;
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+.inline-flex{
+    display: inline-flex;
+    width: 100%;
+}

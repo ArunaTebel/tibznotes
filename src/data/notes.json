@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Bold and Beautiful",
+    "content": "This is a sample content with <strong>Bold</strong> text"
+  },
+  {
+    "id": 2,
+    "name": "Italic is the new Orange",
+    "content": "This is a sample content with <em>Italic</em> text"
+  },
+  {
+    "id": 3,
+    "name": "Code for your life",
+    "content": "This is a sample content with <code>Code</code> segment"
+  },
+  {
+    "id": 4,
+    "name": "Google Knows!",
+    "content": "This is a sample content a <a href='https://google.com'>Google</h1> link!"
+  }
+]
