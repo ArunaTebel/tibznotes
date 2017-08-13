@@ -28,18 +28,18 @@ class NotesList extends Component {
     handleRenameNote(event) {
         if (event.key === 'Enter') {
             this.handleNoteRename(this.state.renameNoteId, event.target.value);
-            this.toggleRenameFields();
+            NotesList.toggleRenameFields();
         }
     }
 
     handleNoteRenameSelection(noteId) {
-        this.toggleRenameFields();
+        NotesList.toggleRenameFields();
         document.getElementById('renameTxt_' + noteId).style.display = 'block';
         document.getElementById('noteNameWrapper_' + noteId).style.display = 'none';
         this.setState({renameNoteId: noteId});
     }
 
-    toggleRenameFields() {
+    static toggleRenameFields() {
         let renameTextInputs = document.getElementsByClassName('renameTxt');
         let noteNameInputs = document.getElementsByClassName('noteNameWrapper');
         for (let i = 0; i < renameTextInputs.length; i++) {
