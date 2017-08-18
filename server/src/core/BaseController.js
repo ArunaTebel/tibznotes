@@ -44,9 +44,14 @@ class BaseController {
 
 
     find(req, res) {
-        this.getRepository().find(this.getModel(), req.params.id, function (err, Document) {
+        const model = this.getModel();
+        this.getRepository().find(model, req.params.id, function (err, Document) {
             if (err) {
+                res.status(400);
                 res.send(err);
+            } else if (Document === null) {
+                res.status(404);
+                res.send({"Error": 'No ' + model.collection.collectionName + ' found for ID: ' + req.params.id})
             }
             res.json(Document);
         });

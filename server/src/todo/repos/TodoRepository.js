@@ -6,6 +6,15 @@ const mongoose = require('mongoose');
 const TodoList = mongoose.model('TodoList');
 
 class TodoRepository extends BaseDocumentRepository {
+
+    find(todoId, callback) {
+        TodoList.findOne({"Todos._id": todoId}, function (error, TodoList) {
+            if (TodoList.Todos.length > 0) {
+                callback(error, TodoList.Todos.find(Todo => Todo._id.toString() === todoId));
+            }
+        });
+    }
+
     create(Todo, todoListId, callback) {
         super.update(TodoList, {_id: todoListId}, {'$push': {'Todos': Todo}}, {
             upsert: true,

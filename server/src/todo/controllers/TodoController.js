@@ -16,6 +16,15 @@ class TodoController extends BaseController {
         this.repository = new TodoRepository();
     }
 
+    find(req, res) {
+        this.getRepository().find(req.params.id, function (err, todo) {
+            if (err) {
+                res.send(err);
+            }
+            res.send(todo);
+        });
+    }
+
     create(req, res) {
         this.getRepository().create(new Todo(req.body), req.params.listId, function (err, todoList) {
             if (err) {

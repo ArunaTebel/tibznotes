@@ -4,12 +4,12 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const MongoClient = require('mongodb').MongoClient;
-const ObjectID = require('mongodb').ObjectID;
-const routes = require('./todo/routes/TodoRoutes');
+const todoRoutes = require('./todo/routes/TodoRoutes');
+const noteRoutes = require('./note/routes/NoteRoutes');
 const app = express();
 const mongoose = require('mongoose');
 require('./todo/models/TodoModel');
+require('./note/models/NoteModel');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
@@ -23,7 +23,8 @@ app.use(function (req, res, next) {
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/tibznotes');
 
-routes(app);
+todoRoutes(app);
+noteRoutes(app);
 
 app.listen(3002);
 

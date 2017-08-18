@@ -1,0 +1,103 @@
+[
+  {
+    "type": "get",
+    "url": "/todo/list/:id",
+    "title": "Retrieve the list of Todo Lists",
+    "name": "GetListOfTodoLists",
+    "group": "TodoList",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>TodoList's unique ID.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>Unique Identifier of the Todo List</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Name",
+            "description": "<p>Name of the Todo List</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>Status of the Todo List</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "Created_Date",
+            "description": "<p>Created_Date of the Todo List</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "Todos",
+            "description": "<p>The list of Todo Items in the Todo List</p> <p>{ &quot;Name&quot;: &quot;Buy Milk&quot;, &quot;_id&quot;: &quot;5996fb08e8bf6f25212376e6&quot;, &quot;Status&quot;: [ &quot;pending&quot; ] }</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "    HTTP/1.1 200 OK\n{\n   \"_id\": \"5996f99459fa9b23c70c8ec4\",\n   \"Name\": \"Personal Todo List\",\n   \"__v\": 0,\n   \"Status\": [\n       \"active\"\n   ],\n   \"Created_Date\": \"2017-08-18T14:28:36.189Z\",\n   \"Todos\": [\n       {\n           \"Name\": \"Buy Milk\",\n           \"_id\": \"5996fb08e8bf6f25212376e6\",\n           \"Status\": [\n               \"pending\"\n           ]\n       },\n      {\n           \"Name\": \"Go to Mars\",\n           \"_id\": \"599701c680d7bc28f3ab828f\",\n           \"Status\": [\n               \"pending\"\n           ]\n       }\n   ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "TodoListNotFound",
+            "description": "<p>Todo List with the given ID was not found</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "CastToObjectIdFailed",
+            "description": "<p>Cast to ObjectId failed for the given ID (ID was not in proper format)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "TodoListNotFound: Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n   \"Error\": \"No todolists found for ID: 5996f99459fa9b23c70c8ec9\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "CastToObjectIdFailed: Error-Response:",
+          "content": " HTTP/1.1 400 Bad Request\n {\n      \"message\": \"Cast to ObjectId failed for value \\\"5996f99459fa9b23c70c8ec9s\\\" at path \\\"_id\\\" for model \\\"TodoList\\\"\",\n      \"name\": \"CastError\",\n      \"stringValue\": \"\\\"5996f99459fa9b23c70c8ec9s\\\"\",\n      \"kind\": \"ObjectId\",\n      \"value\": \"5996f99459fa9b23c70c8ec9s\",\n      \"path\": \"_id\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "docs/javascript_docs/Todo.js",
+    "groupTitle": "TodoList"
+  }
+]

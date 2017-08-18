@@ -1,0 +1,8 @@
+{
+  "api": {
+    "version": "v1",
+    "base_uri": {
+      "name": "api"
+    }
+  }
+}
